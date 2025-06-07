@@ -22,7 +22,7 @@ fn get_permutation(n: usize, mut k: usize) -> String {
 }
 
 fn main() {
-    println!("Введите n и k: ");
+    println!("Введите n и k по ограничению 1 <= n <= 9 и 1 <= k <= n!: ");
     let mut input = String::new();
     io::stdin().read_line(&mut input).expect("Ошибка ввода");
     let parts: Vec<usize> = input
@@ -38,6 +38,10 @@ fn main() {
     let n = parts[0];
     let k = parts[1];
 
+    if (n <= 0 || n > 9) || (k <= 0 || k > factorial(n)){ 
+        return;
+    }
+    
     let permutation = get_permutation(n, k);
     println!("{}", permutation);
 }
