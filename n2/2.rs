@@ -30,11 +30,6 @@ fn main() {
         .map(|s| s.parse().expect("Введите числа"))
         .collect();
 
-    if parts.len() != 2 {
-        println!("Введите ровно два числа n и k.");
-        return;
-    }
-
     let n = parts[0];
     let k = parts[1];
 
