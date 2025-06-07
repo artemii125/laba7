@@ -31,8 +31,11 @@ string getPermutation(int n, int k) {
 
 int main() {
     int n, k;
-    cout << "Введите n и k: ";
+    cout << "Введите n и k по ограничению 1 <= n <= 9 и 1 <= k <= n!: ";
     cin >> n >> k;
+
+    if ((n <= 0 || n > 9) || (k <= 0 || k > factorial(n))) return 0;
+    
     cout << getPermutation(n, k) << endl;
 
     return 0;
